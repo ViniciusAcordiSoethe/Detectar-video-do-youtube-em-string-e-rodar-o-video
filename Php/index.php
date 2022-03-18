@@ -1,4 +1,6 @@
-<?php include 'controle.php' ?>
+<?php include 'controle.php';
+      echo '<br>';
+?>
 <!DOCTYPE html>
 <html lang="pt_BR">
 <head>
