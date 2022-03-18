@@ -4,7 +4,23 @@ $html = '<p>Escuta esse bit da pesada <a title="Musica no Youtube" href="https:/
 
 $htmlexplode = explode('"' , $html);
 
-parse_str(parse_url($html, PHP_URL_QUERY), $var);
+foreach ($htmlexplode as $string) {
+    $char = str_word_count($string, 1);
+    print_r($char);
 
-print_r($var);
+    echo '<br>';
+
+    $guarda = in_array("watch", $char);
+    if ($guarda == 1) {
+        $tamanho = count($char);
+        for ($i = 0; $i < $tamanho; $i++) {
+            if ($char[$i] == "v") {
+                print_r($char[$i+1]);
+            }
+        }
+    }
+
+    echo '<br>';
+
+}
 
